@@ -11,7 +11,7 @@
       "name": "agent-exchange",
       "source": "./",
       "description": "Two-way file exchange between you and Claude: from-human/ and from-agent/ folders, CLAUDE.md block, and a locked-down explorer app.",
-      "version": "1.0.0"
+      "version": "1.0.1"
     }
   ]
 }

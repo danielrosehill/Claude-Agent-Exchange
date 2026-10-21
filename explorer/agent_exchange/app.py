@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (
 CONFIG = os.path.expanduser("~/.config/claude-agent-exchange/config.json")
 DEFAULT_ROOT = "~/Desktop/Claude-Exchange"
 HUMAN, AGENT, ARCHIVE = "from-human", "from-agent", "archive"
-SEEN = ".seen.json"      # in from-human/, written by the agent's read-from-user skill
+SEEN = ".seen.json"      # in from-human/, written by the agent's read-from-human skill
 OPENED = ".opened.json"  # in from-agent/, written by this app when you open a file
 ROLE_PATH = Qt.UserRole + 1
 

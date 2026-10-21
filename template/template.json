@@ -1,11 +1,16 @@
 {
   "name": "claude-agent-exchange",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "root_default": "~/Desktop/Claude-Exchange",
   "root_env": "CLAUDE_EXCHANGE_DIR",
   "config": "~/.config/claude-agent-exchange/config.json",
-  "dirs": ["from-human", "from-agent"],
-  "renamed": {"from-user": "from-human"},
+  "dirs": [
+    "from-human",
+    "from-agent"
+  ],
+  "renamed": {
+    "from-user": "from-human"
+  },
   "managed_files": {
     "Claude-Exchange/README.txt": "README.txt"
   },
@@ -15,5 +20,9 @@
     "begin": "<!-- file-exchange:begin -->",
     "end": "<!-- file-exchange:end -->"
   },
-  "never_touch": ["from-human/*", "from-agent/*", "archive/*"]
+  "never_touch": [
+    "from-human/*",
+    "from-agent/*",
+    "archive/*"
+  ]
 }

@@ -10,5 +10,5 @@
 - Never move, change or delete anything in `from-human/`, and never delete from either side.
   Old files go to `archive/YYYY-MM/` only when I ask for a tidy.
 
-Skills: plugin `agent-exchange` (`save-for-user`, `read-from-user`, `tidy-exchange`,
+Skills: plugin `agent-exchange` (`save-for-user`, `read-from-human`, `tidy-exchange`,
 `update-exchange`).

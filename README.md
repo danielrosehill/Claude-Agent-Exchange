@@ -16,7 +16,7 @@ The project has three parts that ship together:
 | --- | --- |
 | **Explorer** (`explorer/`) | A Qt app locked to the exchange folder. The sidebar has two fixed places, **From Human** and **From Agent**, then Archive, then your own bookmarks. You can browse inside a place but not above it. Drop files on the window to send them to the agent. Agent files you haven't opened are **bold**, and From Agent shows a count. Files the agent has read get a ✓. It never deletes: you can archive or move to Trash, with confirmation. |
 | **Template** (`template/`) | The folder layout (`template.json`), the `CLAUDE.md` snippet, and `apply.py`, which installs and updates both deterministically. |
-| **Claude Code plugin** (`skills/`) | `setup-exchange`, `update-exchange`, `publish-template-change`, `save-for-user`, `read-from-user`, `tidy-exchange`. |
+| **Claude Code plugin** (`skills/`) | `setup-exchange`, `update-exchange`, `publish-template-change`, `save-for-user`, `read-from-human`, `tidy-exchange`. |
 
 ## Install
 
@@ -81,7 +81,7 @@ explorer doesn't show:
 
 | File | Written by | Means |
 | --- | --- | --- |
-| `from-human/.seen.json` | the agent (`read-from-user`) | which of your files the agent has read, by SHA-256 |
+| `from-human/.seen.json` | the agent (`read-from-human`) | which of your files the agent has read, by SHA-256 |
 | `from-agent/.opened.json` | the explorer | which agent files you've opened, by mtime |
 
 ## Updating

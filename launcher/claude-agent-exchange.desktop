@@ -6,6 +6,6 @@ Comment=Pass files to and from your AI agent
 Exec=claude-agent-exchange %U
 Icon=claude-agent-exchange
 Terminal=false
-Categories=Utility;FileManager;
+Categories=Utility;System;FileTools;FileManager;
 Keywords=claude;agent;ai;exchange;inbox;outbox;files;
 StartupWMClass=claude-agent-exchange
