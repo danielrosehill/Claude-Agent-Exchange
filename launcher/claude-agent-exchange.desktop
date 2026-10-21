@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Claude Agent Exchange
+GenericName=Agent file exchange
+Comment=Pass files to and from your AI agent
+Exec=claude-agent-exchange %U
+Icon=claude-agent-exchange
+Terminal=false
+Categories=Utility;FileManager;
+Keywords=claude;agent;ai;exchange;inbox;outbox;files;
+StartupWMClass=claude-agent-exchange

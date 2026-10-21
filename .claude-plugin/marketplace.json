@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "claude-agent-exchange",
+  "owner": {
+    "name": "Daniel Rosehill",
+    "email": "public@danielrosehill.com",
+    "url": "https://danielrosehill.com"
+  },
+  "plugins": [
+    {
+      "name": "agent-exchange",
+      "source": "./",
+      "description": "Two-way file exchange between you and Claude: from-human/ and from-agent/ folders, CLAUDE.md block, and a locked-down explorer app.",
+      "version": "1.0.0"
+    }
+  ]
+}
