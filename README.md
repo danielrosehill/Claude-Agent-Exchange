@@ -43,6 +43,25 @@ desktop that reads `~/.local/share/applications` (KDE, GNOME and others). The
 explorer itself is plain PySide6 and should run on macOS and Windows too, but the
 installer is Linux-only for now.
 
+## Drive exchange (primary since 1.1.0)
+
+The local folder needs you at the computer. The Drive exchange doesn't: you share a
+file from your phone into a Google Shared Drive, tell Claude "I just shared it", and
+Claude downloads it, checks it, and moves the Drive copy to the trash. The Drive is an
+intermediate space, not storage.
+
+| Folder | Direction | Skill |
+| --- | --- | --- |
+| `fe` (first entry) | you → Claude, unsorted, bind your phone shortcuts here | `fetch-from-drive` |
+| `from-agent` | Claude → you | `send-to-drive` |
+| shared (optional) | Claude → you and one other person | `send-to-drive --to shared` |
+
+Folders are addressed by ID, from `AGENT_EXCHANGE_DRIVE_ID` / `_INBOX_ID` /
+`_OUTBOX_ID` / `_SHARED_ID` / `_RCLONE_REMOTE`, or from the `drive` section of the
+config file. `scripts/exchange_drive.py` does the transfer with rclone, because Drive
+MCP servers often run on another host and can't write to your disk. Deleting always
+means the Drive trash, never a permanent delete.
+
 ## Configure it for yourself
 
 Personal settings live in `~/.config/claude-agent-exchange/config.json`, never in

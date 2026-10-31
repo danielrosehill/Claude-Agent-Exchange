@@ -1,7 +1,7 @@
 {
   "name": "agent-exchange",
-  "version": "1.0.1",
-  "description": "A two-way file exchange between you and Claude on your own machine: a folder with from-human/ and from-agent/, a CLAUDE.md block so Claude uses it unprompted, and a small explorer app (with launcher) locked to that folder, with new-file badges and read receipts. Skills to set up, update, save output, pick up new files, and archive. Never deletes.",
+  "version": "1.1.0",
+  "description": "A two-way file exchange between you and Claude. Primary transport is a Google Shared Drive (an inbox 'fe' you upload to from your phone, an outbox from-agent, an optional shared folder), moved with rclone and cleaned up after use; a CLAUDE.md block tells Claude how to use it. The original local folder and its explorer app remain for machines without Drive. Never permanently deletes.",
   "author": {
     "name": "Daniel Rosehill",
     "email": "public@danielrosehill.com",
@@ -18,6 +18,10 @@
     "file-manager",
     "desktop",
     "launcher",
-    "qt"
+    "qt",
+    "google-drive",
+    "android",
+    "share-sheet",
+    "rclone"
   ]
 }

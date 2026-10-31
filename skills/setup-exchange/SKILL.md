@@ -53,6 +53,24 @@ bookmarks.
 If the block doesn't exist in CLAUDE.md yet, show the dry run first. Otherwise install
 directly.
 
+## 3a. Drive exchange (recommended)
+
+The primary transport is a Google Shared Drive with three folders: `fe` (inbox, which
+the user uploads to from the phone share sheet), `from-agent` (outbox) and, optionally,
+a folder shared with one other person. The user creates the Shared Drive. The agent
+creates the folders (with a Drive MCP or `rclone mkdir`) and records the IDs:
+
+```json
+{ "drive": { "drive_id": "0A...", "inbox_id": "1...", "outbox_id": "1...",
+             "shared_id": "1...", "rclone_remote": "<rclone drive remote>" } }
+```
+
+in `~/.config/claude-agent-exchange/config.json` (or as `AGENT_EXCHANGE_*` env vars,
+which take precedence). It needs an rclone Drive remote with access to that Shared
+Drive. Check with `python3 -I "$REPO/scripts/exchange_drive.py" list inbox`. On the
+phone, Drive's share sheet ("Save to Drive") remembers the last folder, so after the
+first time a share is three taps.
+
 ## 4. Report
 
 Report the apply output in a line or two, and tell the user the launcher is in the

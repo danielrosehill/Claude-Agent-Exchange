@@ -1,14 +1,20 @@
-## File exchange folder
+## File exchange (Google Shared Drive)
 
-`{root}/` is the drop folder between us. `from-human/` is what I put in for you, and
-`from-agent/` is where you save files for me.
+The exchange between us is a Google Shared Drive, so I can drop files from my phone
+without the computer being on. Folder IDs come from `AGENT_EXCHANGE_*` env vars or the
+`drive` section of `~/.config/claude-agent-exchange/config.json`.
 
-- "Save it for me" with no other destination means `from-agent/`. Name files
-  `YYYY-MM-DD_<what-it-is>.<ext>`, never overwrite, and tell me the full path.
-- "I put it in the folder" means `from-human/`. Use the newest file you haven't seen.
-  If several are new, ask which one.
-- Never move, change or delete anything in `from-human/`, and never delete from either side.
-  Old files go to `archive/YYYY-MM/` only when I ask for a tidy.
+- **`fe/` (first entry)** is where I upload, usually via the phone share sheet. It's
+  unsorted. "I just shared it", "it's in fe" or "check the drive" means: take the newest
+  file there (ask if several are new and it's unclear), download it into the task's
+  working location, then trash the Drive copy. Skill `fetch-from-drive`.
+- **`from-agent/`** is where you leave files for me. Name them `YYYY-MM-DD_<what-it-is>.<ext>`,
+  never overwrite, and give me the link. Skill `send-to-drive`.
+- **The shared folder** (`shared_id`, if configured) is a second target for things meant
+  for me and the person it's shared with. Send there only when asked.
+- The Drive is an intermediate space, not storage. Once a file has been used, or filed
+  in its permanent home, it doesn't stay here. Deleting means Drive trash (30-day
+  recovery), never a permanent delete.
 
-Skills: plugin `agent-exchange` (`save-for-user`, `read-from-human`, `tidy-exchange`,
-`update-exchange`).
+Skills: plugin `agent-exchange` (`fetch-from-drive`, `send-to-drive`; local-folder
+skills `read-from-human`, `save-for-user` only when no Drive is configured).

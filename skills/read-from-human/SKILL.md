@@ -1,9 +1,11 @@
 ---
 name: read-from-human
-description: Pick up files the user dropped into the exchange folder's from-human/ directory (default ~/Desktop/Claude-Exchange/from-human), listing what's new since Claude last looked, and use them in the current task. Use when the user says "I put something in the folder", "check the exchange", "use the file I dropped in", "grab what I gave you", or refers to a file they passed in without giving a path.
+description: Local-folder mode only, when no Drive exchange is configured (otherwise use fetch-from-drive). Pick up files the user dropped into the exchange folder's from-human/ directory (default ~/Desktop/Claude-Exchange/from-human), listing what's new since Claude last looked, and use them in the current task. Use when the user says "I put something in the folder", "check the exchange", "use the file I dropped in", "grab what I gave you", or refers to a file they passed in without giving a path.
 ---
 
 # Read what the user dropped in
+
+> **Local-folder mode.** When a Drive exchange is configured (`exchange_drive.py config` shows an `inbox_id`), use `fetch-from-drive` / `send-to-drive` instead. This skill is for machines without Drive.
 
 ```bash
 X=$(python3 -I -c 'import json,os;c=os.path.expanduser("~/.config/claude-agent-exchange/config.json");r=os.environ.get("CLAUDE_EXCHANGE_DIR") or (json.load(open(c)).get("root") if os.path.exists(c) else None) or "~/Desktop/Claude-Exchange";print(os.path.abspath(os.path.expanduser(r)))')
