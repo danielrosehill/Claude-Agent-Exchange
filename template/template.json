@@ -1,6 +1,6 @@
 {
   "name": "claude-agent-exchange",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "root_default": "~/Desktop/Claude-Exchange",
   "root_env": "CLAUDE_EXCHANGE_DIR",
   "config": "~/.config/claude-agent-exchange/config.json",

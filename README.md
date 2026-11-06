@@ -87,7 +87,8 @@ this repo:
 ## How the agent side works
 
 The `CLAUDE.md` block (between `<!-- file-exchange:begin -->` and
-`<!-- file-exchange:end -->`) tells Claude:
+`<!-- file-exchange:end -->`) is a short pointer, so it costs little in every session. It names the
+phrases that trigger the exchange and the skills to use, and the rules live in those skills:
 
 - "Save it for me" means `from-agent/`. Files are named `YYYY-MM-DD_<what-it-is>.<ext>`,
   nothing is ever overwritten, and Claude tells you the full path.
